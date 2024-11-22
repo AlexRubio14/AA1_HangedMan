@@ -31,7 +31,6 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/splash_screen_text"
-            android:textColor="@color/black"
             android:textSize="24sp"></TextView>
 
     </LinearLayout>
