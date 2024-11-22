@@ -28,25 +28,38 @@ class LevelAdapter(private val level:List<Level>,  private val listener: OnButto
         holder.levelButton.setOnClickListener {
             listener.onButtonClick(level)
         }
+
     }
 
     override fun getItemCount(): Int {
         return level.size
     }
 
-    class LevelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-    {
+    class LevelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val levelWord: TextView = itemView.findViewById(R.id.word)
         private val levelLetter: TextView = itemView.findViewById(R.id.letter)
         private val levelImage: ImageView = itemView.findViewById(R.id.level_image)
         val levelButton: Button = itemView.findViewById(R.id.levelScreenButton)
 
-        fun bind(level: Level)
-        {
-            levelWord.text = level.word
-            levelLetter.text = level.difficulty
-            levelImage.setImageResource(level.imageResId)
+        fun bind(level: Level) {
+            val context = itemView.context
+            val numOfLetters = level.word.length
+
+            levelWord.text = context.getString(R.string.scroll_screen_word) + " " + level.word
+            levelLetter.text = context.getString(R.string.scroll_screen_letter) + " " + numOfLetters
+
+            if(numOfLetters <= 4)
+                levelImage.setImageResource(R.drawable.easy)
+            else if(numOfLetters <= 7)
+                levelImage.setImageResource(R.drawable.medium)
+            else
+                levelImage.setImageResource(R.drawable.hard)
         }
+
+
+
+
     }
+
 
 }

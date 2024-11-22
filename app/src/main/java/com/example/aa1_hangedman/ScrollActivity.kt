@@ -21,20 +21,21 @@ class ScrollActivity : AppCompatActivity(), LevelAdapter.OnButtonClickListener {
         setContentView(R.layout.activity_scroll)
 
         val levels = listOf(
-            Level("Palabra: PauG", "Letras: 4", R.drawable.easy),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: AugustusSolInvictus", "Letras: 19", R.drawable.hard),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
-            Level("Palabra: Gemix", "Letras: 5", R.drawable.medium),
+            Level("PauG"),
+            Level("Gemix"),
+            Level("AugustusSolInvictus"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
+            Level("Gemix"),
         )
 
         val recyclerView: RecyclerView = findViewById(R.id.level_recycler_view)
