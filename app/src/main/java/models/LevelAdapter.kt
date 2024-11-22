@@ -12,6 +12,7 @@ import com.example.aa1_hangedman.R
 
 class LevelAdapter(private val level:List<Level>,  private val listener: OnButtonClickListener) : RecyclerView.Adapter<LevelAdapter.LevelViewHolder>() {
     interface OnButtonClickListener {
+
         fun onButtonClick(level: Level)
     }
 
