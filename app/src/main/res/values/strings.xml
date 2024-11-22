@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AA1_HangedMan</string>
+    <string name="splash_screen_text">Tap To Continue</string>
+    <string name="scroll_screen_word">Word:</string>
+    <string name="scroll_screen_letter">Letters:</string>
+    <string name="dark_mode">Dark Mode</string>
 </resources>
