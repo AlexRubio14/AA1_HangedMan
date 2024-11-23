@@ -1,0 +1,2 @@
+Cuando se cambia a dark o light mode en la escena del ahorcado o se cambia a landScape o viceversa, se resetea toda la escena perdiendo todo el progreso de la partida,
+hemos intentado arreglarlo guardando la información y rebreescribiendo sobre la actividad pero no ha acabado funcionando

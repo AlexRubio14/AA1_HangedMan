@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AA1_Ahorcado</string>
+    <string name="splash_screen_text">Pulsa Para Continuar</string>
+    <string name="scroll_screen_word">Palabra:</string>
+    <string name="scroll_screen_letter">Letras:</string>
+    <string name="dark_mode">Modo Noche</string>
+    <string name="win">Has Ganado</string>
+    <string name="lose">Has Perdido</string>
+</resources>
