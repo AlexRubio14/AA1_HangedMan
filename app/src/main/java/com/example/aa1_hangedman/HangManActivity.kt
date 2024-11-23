@@ -62,7 +62,7 @@ class HangManActivity : AppCompatActivity() {
         )
 
         hangmangFinishButton = findViewById(R.id.hangmanButton)
-        hangmangFinishButton.isClickable = false
+        hangmangFinishButton.isEnabled = false
     }
 
     fun initializeButtons()
@@ -124,7 +124,7 @@ class HangManActivity : AppCompatActivity() {
         }
 
         hangmanWord.text = getString(R.string.lose)
-        hangmangFinishButton.isClickable = true
+        hangmangFinishButton.isEnabled = true
 
     }
 
@@ -137,13 +137,13 @@ class HangManActivity : AppCompatActivity() {
                 button.setBackgroundColor(ContextCompat.getColor(this, R.color.disabledButton))
             }
             hangmanWord.text = getString(R.string.win)
-            hangmangFinishButton.isClickable = true
+            hangmangFinishButton.isEnabled = true
         }
     }
 
     fun finishHangman()
     {
-        if(hangmangFinishButton.isClickable)
+        if(hangmangFinishButton.isEnabled)
         {
             startActivity(Intent(this, ScrollActivity::class.java))
         }
