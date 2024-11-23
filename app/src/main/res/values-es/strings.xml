@@ -5,4 +5,6 @@
     <string name="scroll_screen_word">Palabra:</string>
     <string name="scroll_screen_letter">Letras:</string>
     <string name="dark_mode">Modo Noche</string>
+    <string name="win">Has Ganado</string>
+    <string name="lose">Has Perdido</string>
 </resources>

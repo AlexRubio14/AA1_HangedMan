@@ -26,6 +26,16 @@ class ScrollActivity : AppCompatActivity(), LevelAdapter.OnButtonClickListener {
         enableEdgeToEdge()
         setContentView(R.layout.activity_scroll)
 
+        createScrollInformation()
+
+
+        scrollToolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(scrollToolbar)
+
+    }
+
+    fun createScrollInformation()
+    {
         val levels = listOf(
             Level("PauG"),
             Level("Gemix"),
@@ -47,16 +57,9 @@ class ScrollActivity : AppCompatActivity(), LevelAdapter.OnButtonClickListener {
         val recyclerView: RecyclerView = findViewById(R.id.level_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = LevelAdapter(levels, this)
-
-
-        scrollToolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(scrollToolbar)
-
     }
 
     override fun onButtonClick(level: Level) {
-        Toast.makeText(this, "Nivel seleccionado: ${level.word}", Toast.LENGTH_SHORT).show()
-
         val intent = Intent(this, HangManActivity::class.java)
         intent.putExtra("level_word", level.word)
         startActivity(intent)

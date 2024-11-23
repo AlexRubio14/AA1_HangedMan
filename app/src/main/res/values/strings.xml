@@ -4,4 +4,6 @@
     <string name="scroll_screen_word">Word:</string>
     <string name="scroll_screen_letter">Letters:</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="win">You Win</string>
+    <string name="lose">You Lose</string>
 </resources>
