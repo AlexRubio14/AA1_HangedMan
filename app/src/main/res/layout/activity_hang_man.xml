@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <android.widget.LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/HangmanToolbar"
@@ -12,6 +19,8 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
+
+
 
     <ImageView
         android:id="@+id/HangmanImage"
@@ -34,7 +43,9 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_margin="15dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -368,5 +379,15 @@
 
         </LinearLayout>
     </LinearLayout>
+    </android.widget.LinearLayout>
 
-</android.widget.LinearLayout>
+    <Button
+        android:id="@+id/hangmanButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="false"></Button>
+
+
+
+</android.widget.FrameLayout>

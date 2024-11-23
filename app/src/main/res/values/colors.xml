@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#FF5722 </color>
     <color name="colorOnPrimary">#FFC107 </color>
+    <color name="disabledButton">#BDBDBD</color>
 </resources>
