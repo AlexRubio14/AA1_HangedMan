@@ -104,14 +104,10 @@ class HangManActivity : AppCompatActivity() {
         else
         {
             currentImageIndex++
-            if(currentImageIndex < maxErrors)
-            {
-                updateImage()
-            }
-            else
+            updateImage()
+            if(currentImageIndex == maxErrors)
             {
                 gameOver()
-                updateImage()
             }
         }
     }

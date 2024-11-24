@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         splashScreenButton  = findViewById(R.id.splashScreenButton)
         splashScreenButton.setOnClickListener {onButtonClick()}
-
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
 
     private fun onButtonClick()

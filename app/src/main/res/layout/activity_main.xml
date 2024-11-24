@@ -15,7 +15,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="parent">
+        app:layout_constraintStart_toEndOf="parent"
+        android:layout_margin="35dp">
 
         <ImageView
             android:id="@+id/splashScreenImage"
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/splash_screen_text"
-            android:textSize="24sp"></TextView>
+            android:textSize="37sp"></TextView>
 
     </LinearLayout>
 

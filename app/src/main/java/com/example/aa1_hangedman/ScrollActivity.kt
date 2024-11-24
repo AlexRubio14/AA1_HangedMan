@@ -28,7 +28,6 @@ class ScrollActivity : AppCompatActivity(), LevelAdapter.OnButtonClickListener {
 
         createScrollInformation()
 
-
         scrollToolbar = findViewById(R.id.toolbar)
         setSupportActionBar(scrollToolbar)
 
