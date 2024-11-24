@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">AA1_Ahorcado</string>
     <string name="splash_screen_text">Pulsa Para Continuar</string>
+    <string name="splash_title">Ahorcado</string>
     <string name="scroll_screen_word">Palabra:</string>
     <string name="scroll_screen_letter">Letras:</string>
     <string name="dark_mode">Modo Noche</string>

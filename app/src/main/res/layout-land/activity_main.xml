@@ -17,6 +17,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent">
 
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/splash_title"
+            android:textSize="37sp"></TextView>
         <ImageView
             android:id="@+id/splashScreenImage"
             android:layout_width="match_parent"
