@@ -61,6 +61,7 @@ class ScrollActivity : AppCompatActivity(), LevelAdapter.OnButtonClickListener {
     override fun onButtonClick(level: Level) {
         val intent = Intent(this, HangManActivity::class.java)
         intent.putExtra("level_word", level.word)
+        intent.putExtra("come_from_scroll", true)
         startActivity(intent)
     }
 

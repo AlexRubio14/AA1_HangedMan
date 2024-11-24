@@ -23,7 +23,7 @@ class HangManActivity : AppCompatActivity() {
     private lateinit var buttonArray: Array<Button>
     private lateinit var currentWordState : CharArray
     private lateinit var hangmanWord: TextView
-    private var currentImageIndex = 0
+    private var currentImageIndex: Int = 0
     private var maxErrors : Int = 7
     private lateinit var hangmanImage : List<Int>
     private lateinit var hangmangFinishButton : Button
@@ -48,10 +48,21 @@ class HangManActivity : AppCompatActivity() {
     {
         val intent = intent;
         word = intent.getStringExtra("level_word") ?: ""
-        val underlinedWord = word.replace(Regex("."), "_ ")
+        currentImageIndex = intent.getIntExtra("current_image_index", 0)
 
-        hangmanWord = findViewById(R.id.HagmanWord)
-        currentWordState = underlinedWord.toCharArray()
+        if(intent.getBooleanExtra("come_from_scroll", false))
+        {
+            val underlinedWord = word.replace(Regex("."), "_ ")
+
+            hangmanWord = findViewById(R.id.HagmanWord)
+            currentWordState = underlinedWord.toCharArray()
+        }
+        else
+        {
+            hangmanWord = findViewById(R.id.HagmanWord)
+            currentWordState = intent.getCharArrayExtra("current_word_state") ?: charArrayOf()
+        }
+
         updateWord()
 
         hangmanImage = listOf(
@@ -60,6 +71,7 @@ class HangManActivity : AppCompatActivity() {
             R.drawable.hangmanwithfourerror, R.drawable.hangmanwithfiveerror,
             R.drawable.hangmanwithsixerror, R.drawable.hangmanwithsevenerror
         )
+        updateImage()
 
         hangmangFinishButton = findViewById(R.id.hangmanButton)
         hangmangFinishButton.isEnabled = false
@@ -78,6 +90,14 @@ class HangManActivity : AppCompatActivity() {
             findViewById(R.id.vButton), findViewById(R.id.wButton), findViewById(R.id.xButton),
             findViewById(R.id.yButton), findViewById(R.id.zButton)
         )
+
+        val buttonStates = intent.getBooleanArrayExtra("buttons_state") ?: BooleanArray(buttonArray.size) { true }
+
+        buttonArray.forEachIndexed { index, button ->
+            if (index < buttonStates.size) {
+                button.isEnabled = buttonStates[index]
+            }
+        }
     }
 
     fun onButtonClick(button: Button)
@@ -186,6 +206,13 @@ class HangManActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             item.isChecked = true
         }
+
+        val buttonStates = buttonArray.map { it.isEnabled }.toBooleanArray()
+
+        intent.putExtra("current_image_index", currentImageIndex)
+        intent.putExtra("current_word_state", currentWordState)
+        intent.putExtra("come_from_scroll", false)
+        intent.putExtra("buttons_state", buttonStates)
     }
 
     private fun updateMenuIcon(menu: Menu?) {
